@@ -1,0 +1,31 @@
+{
+  "name": "theia-window-state-test-plugin",
+  "publisher": "theia",
+  "keywords": [
+    "theia-plugin"
+  ],
+  "version": "0.0.1",
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "@wiptheia/plugin": "latest",
+    "rimraf": "^2.6.2",
+    "typescript": "^2.8.1",
+    "ts-loader": "^4.1.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc && webpack-cli --config webpack.config.js"
+  },
+  "engines": {
+    "theiaPlugin": "latest"
+  },
+  "theiaPlugin": {
+    "frontend": "dist/theia-window-state-test-frontend-plugin.js"
+  }
+}
